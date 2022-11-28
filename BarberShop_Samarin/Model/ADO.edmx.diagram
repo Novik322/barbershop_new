@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="31d5e5858c184f638e329f7ae16217da" Name="Diagram1">
+        <EntityTypeShape EntityType="SamarinR_BarbershopModel.Admins" PointX="5.75" PointY="4.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SamarinR_BarbershopModel.Clients" PointX="3" PointY="1.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SamarinR_BarbershopModel.Masters" PointX="0.75" PointY="1.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SamarinR_BarbershopModel.Records" PointX="5.25" PointY="1" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SamarinR_BarbershopModel.Service" PointX="3" PointY="5.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SamarinR_BarbershopModel.sysdiagrams" PointX="7.75" PointY="0.75" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="SamarinR_BarbershopModel.FK_Clients_Masters" />
+        <AssociationConnector ManuallyRouted="false" Association="SamarinR_BarbershopModel.FK_Records_Clients" />
+        <AssociationConnector ManuallyRouted="false" Association="SamarinR_BarbershopModel.FK_Records_Masters" />
+        <AssociationConnector ManuallyRouted="false" Association="SamarinR_BarbershopModel.FK_Records_Service" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
