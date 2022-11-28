@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BarberShop_Samarin"
       mc:Ignorable="d" 
-      d:DesignHeight="641" d:DesignWidth="995"
+      d:DesignHeight="641" d:DesignWidth="994"
       Title="Бронирование клиента">
 
     <Grid>
