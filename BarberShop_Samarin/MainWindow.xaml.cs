@@ -24,6 +24,7 @@ namespace BarberShop_Samarin
         {
             InitializeComponent();
             MainFrame.Navigate(new AuthPage());
+
         }
 
         private void WindowMenuGrid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -71,7 +72,7 @@ namespace BarberShop_Samarin
 
         private void RegistationBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new AuthPage()); 
+            MainFrame.Navigate(new AuthPage());
         }
 
         private void BronBtn_Click(object sender, RoutedEventArgs e)

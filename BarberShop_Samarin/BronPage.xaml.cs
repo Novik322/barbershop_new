@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarberShop_Samarin.AppData;
+using BarberShop_Samarin.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,10 @@ namespace BarberShop_Samarin
         public BronPage()
         {
             InitializeComponent();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
         }
     }
 }

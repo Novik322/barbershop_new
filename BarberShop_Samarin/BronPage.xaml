@@ -46,7 +46,7 @@
             <TextBox Grid.Row="1" Grid.Column="1"/>
             <TextBox Grid.Row="2" Grid.Column="1"/>
             <DatePicker Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
-            <ComboBox Grid.Row="4" Grid.Column="1"/>
+            <ComboBox Name="MasterCmb"  Grid.Row="4" Grid.Column="1" SelectionChanged="ComboBox_SelectionChanged" Text="{Binding Masters.Master_Name}"/>
 
         </Grid>
 
