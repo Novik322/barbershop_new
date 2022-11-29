@@ -1,6 +1,4 @@
-﻿using BarberShop_Samarin.AppData;
-using BarberShop_Samarin.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,18 +16,13 @@ using System.Windows.Shapes;
 namespace BarberShop_Samarin
 {
     /// <summary>
-    /// Логика взаимодействия для BronPage.xaml
+    /// Логика взаимодействия для WelcomePage.xaml
     /// </summary>
-    public partial class BronPage : Page
+    public partial class WelcomePage : Page
     {
-        public BronPage()
+        public WelcomePage()
         {
             InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
         }
     }
 }

@@ -39,20 +39,21 @@ namespace BarberShop_Samarin
                 }
                 else
                 {
+                    (Application.Current.MainWindow as MainWindow).BronBtn.Visibility = Visibility.Visible;
+                    (Application.Current.MainWindow as MainWindow).ClientsBtn.Visibility = Visibility.Visible;
+                    (Application.Current.MainWindow as MainWindow).OnepageBtn.Visibility = Visibility.Visible;
+                    (Application.Current.MainWindow as MainWindow).RegistationBtn.Visibility = Visibility.Hidden;
+                    (Application.Current.MainWindow as MainWindow).ExtRegBtn.Visibility = Visibility.Visible;
                     switch (user.Dostup)
                     {
                         case 1:
-                            MessageBox.Show("Здравствуйте," + user.Name + "!",
-                         "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                            AppFrame.framemain.Navigate(new GlavPage());
+                            AppFrame.Main.Navigate(new WelcomePage());
                             break;
                         case 2:
-                            MessageBox.Show("Здравствуйте," + user.Name + "!",
-                         "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                            AppFrame.framemain.Navigate(new GlavPage());
+                            AppFrame.Main.Navigate(new WelcomePage());
                             break;
                         case 3:
-                            MessageBox.Show("Данные не обнаружены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Данные не обнаружены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error);
                             break;
                     }
                 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarberShop_Samarin.AppData;
+using BarberShop_Samarin.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,20 @@ namespace BarberShop_Samarin
         public ClinentsPage()
         {
             InitializeComponent();
+        }
+
+        private void ClientsLb_Initialized(object sender, EventArgs e)
+        {
+        }
+
+        private void ClientsLb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<ClientsClass> animmalsList = new List<ClientsClass>();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

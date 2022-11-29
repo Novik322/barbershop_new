@@ -9,6 +9,6 @@ namespace BarberShop_Samarin.AppData
 {
     class AppFrame
     {
-        public static Frame framemain;
+        public static Frame Main;
     }
 }

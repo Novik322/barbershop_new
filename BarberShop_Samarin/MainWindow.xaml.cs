@@ -1,6 +1,9 @@
-﻿using System;
+﻿using BarberShop_Samarin.AppData;
+using BarberShop_Samarin.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,7 +26,15 @@ namespace BarberShop_Samarin
         public MainWindow()
         {
             InitializeComponent();
+            AppConnect.project_model = new SamarinR_BarbershopEntities();
+            AppFrame.Main = MainFrame;
             MainFrame.Navigate(new AuthPage());
+            OnepageBtn.Visibility = Visibility.Hidden;
+            BronBtn.Visibility = Visibility.Hidden;
+            ClientsBtn.Visibility = Visibility.Hidden;
+            ExtRegBtn.Visibility = Visibility.Hidden;
+
+
 
         }
 
@@ -88,7 +99,17 @@ namespace BarberShop_Samarin
 
         private void OnepageBtn_Click(object sender, RoutedEventArgs e)
         {
+            MainFrame.Navigate(new WelcomePage());
+        }
 
+        private void ExtRegBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AuthPage());
+            OnepageBtn.Visibility = Visibility.Hidden;
+            BronBtn.Visibility = Visibility.Hidden;
+            ClientsBtn.Visibility = Visibility.Hidden;
+            ExtRegBtn.Visibility = Visibility.Hidden;
+            RegistationBtn.Visibility = Visibility.Visible;
         }
     }
 }

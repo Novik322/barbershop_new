@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:BarberShop_Samarin"
       mc:Ignorable="d" 
       d:DesignHeight="665" d:DesignWidth="1000"
-      Title="ClinentsPage">
+      Title="ClinentsPage" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,9 +24,46 @@
             <Button Margin="0 0 10 0" Content="Удалить клиента" Style="{StaticResource AcceptButton}"/>
             <Button Margin="0 0 10 0" Content="Изменить клиента" Style="{StaticResource AcceptButton}"/>
         </StackPanel>
-        <Menu Grid.Row="1" Grid.Column="1" Opacity="2">
-            <MenuItem>
-            </MenuItem>
-        </Menu>
+        <DataGrid Name="ClientsDg"
+                  FontSize="20"
+                  AutoGenerateColumns="False"
+                  Grid.Row="1" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Clients.Name}"/>
+
+                <DataGridTemplateColumn Header="Телефон">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Clients.Phone}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="Мастер" Binding="{Binding Clients.Master}"/>
+            </DataGrid.Columns>
+
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="1" Text="{Binding NameAnimal, StringFormat=Имя: {0}}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Birth, StringFormat=Дата рождения: {0}}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Weight, StringFormat=Вес: {0}}"/>
+                        <TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="3" Text="{Binding Description, StringFormat=Описание: {0}}" TextWrapping="Wrap" />
+                        <Image Grid.RowSpan="2" Grid.Column="0" Source="{Binding Image}" Width="150"/>
+                    </Grid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
     </Grid>
 </Page>

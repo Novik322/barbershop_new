@@ -63,7 +63,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppData\AppFrame.cs" />
-    <Compile Include="AppData\UserSession.cs" />
+    <Compile Include="AppData\ClientsClass.cs" />
     <Compile Include="BronPage.xaml.cs">
       <DependentUpon>BronPage.xaml</DependentUpon>
     </Compile>
@@ -72,6 +72,9 @@
     </Compile>
     <Compile Include="View\Pages\GlavPage.xaml.cs">
       <DependentUpon>GlavPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
     <Page Include="AuthPage.xaml">
       <SubType>Designer</SubType>
@@ -102,6 +105,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Pages\GlavPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
