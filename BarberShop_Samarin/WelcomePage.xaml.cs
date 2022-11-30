@@ -24,5 +24,12 @@ namespace BarberShop_Samarin
         {
             InitializeComponent();
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            AppData.AppConnect.project_model.Records.Add(new Model.Records()
+            );
+                return;
+            }
+        }
     }
-}

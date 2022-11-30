@@ -33,7 +33,7 @@ namespace BarberShop_Samarin
 
         private void ClientsLb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<ClientsClass> animmalsList = new List<ClientsClass>();
+            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

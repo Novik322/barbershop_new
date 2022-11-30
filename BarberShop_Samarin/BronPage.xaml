@@ -13,6 +13,7 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="10*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -30,24 +31,29 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Номер карты клиента: " Grid.Row="0" FontSize="24"/>
-            <TextBlock Text="Имя клиента: " Grid.Row="1" FontSize="24"/>
-            <TextBlock Text="Номер телефона клиента: " Grid.Row="2" FontSize="24"/>
-            <TextBlock Text="Дата и время для брони: " Grid.Row="3" FontSize="24"/>
-            <TextBlock Text="Мастер: " Grid.Row="4" FontSize="24"/>
+            <TextBlock Text="Номер карты клиента: " Grid.Row="0" FontSize="24" Name="NumCardTbl"/>
+            <TextBlock IsEnabled="false" Text="Имя клиента: " Grid.Row="1" FontSize="24" Name="NameClTbl"/>
+            <TextBlock Text="Номер телефона клиента: " Grid.Row="2" FontSize="24" Name="NumTelTbl"/>
+            <TextBlock Text="Дата и время для брони: " Grid.Row="3" FontSize="24" Name="DateTimeTbl"/>
+            <TextBlock Text="Мастер: " Grid.Row="4" FontSize="24" Name="MasterTbl"/>
+            <TextBlock Text="Комментарий: " Grid.Row="5" FontSize="24" Name="CommentTbl"/>
 
-            <TextBox Grid.Row="0" Grid.Column="1"/>
-            <TextBox Grid.Row="1" Grid.Column="1"/>
-            <TextBox Grid.Row="2" Grid.Column="1"/>
-            <DatePicker Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="6"  Text="Клиента можно найти не только по ID, но и по номеру телефона." Margin="10" TextWrapping="Wrap" Foreground="blue" FontSize="24"/>
+            <TextBox Grid.Row="5" Grid.Column="1"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="NumCardTb"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="NameCliTb" Background="gray"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="TelTb"/>
+            <DatePicker Name="VremyaDt"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
             <ComboBox Name="MasterCmb"  Grid.Row="4" Grid.Column="1" SelectionChanged="ComboBox_SelectionChanged" Text="{Binding Masters.Master_Name}"/>
-
+            <Button Grid.Row="6" Grid.Column="1" Content="Добавить" Style="{StaticResource AcceptButton}" x:Name="AddBronBtn" Click="AddBronBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Right"/>
         </Grid>
 
     </Grid>

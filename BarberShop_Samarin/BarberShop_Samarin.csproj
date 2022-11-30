@@ -63,7 +63,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppData\AppFrame.cs" />
-    <Compile Include="AppData\ClientsClass.cs" />
     <Compile Include="BronPage.xaml.cs">
       <DependentUpon>BronPage.xaml</DependentUpon>
     </Compile>

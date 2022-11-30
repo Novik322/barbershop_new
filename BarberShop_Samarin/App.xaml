@@ -17,7 +17,7 @@
             <Setter Property="FontFamily" Value="/Resouces/Fonts/#QuickSand"/>
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Background" Value="White" />
-            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontSize" Value="24" />
             <Setter Property="BorderBrush" Value="#eee"/>
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Margin" Value="0 20" />

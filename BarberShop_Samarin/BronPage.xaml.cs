@@ -22,14 +22,36 @@ namespace BarberShop_Samarin
     /// </summary>
     public partial class BronPage : Page
     {
+        Records records = new Records();
         public BronPage()
         {
             InitializeComponent();
+            NameCliTb.IsEnabled = false;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
+        }
+
+        private void AddBronBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(NumCardTb.Text))
+            {
+                MessageBox.Show("Не все поля заполнены!");
+            }
+            else
+            {
+                //records.ID = NumCardTb.Text();
+                records.ID = Convert.ToInt32(this.NumCardTb.Text);
+                records.Client = Convert.ToInt32(this.NameCliTb.Text);
+                records.Master = Convert.ToInt32(this.MasterCmb.Text);
+
+
+                AppConnect.project_model.Records.Add(records);
+                AppConnect.project_model.SaveChanges();
+                MessageBox.Show("Данные добавлены!");
+            }
         }
     }
 }
