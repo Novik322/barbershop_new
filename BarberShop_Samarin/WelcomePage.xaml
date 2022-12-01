@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:BarberShop_Samarin"
       mc:Ignorable="d" 
       d:DesignHeight="665" d:DesignWidth="1000"
-      Title="WelcomePage" Loaded="Page_Loaded">
+      Title="Главная" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>

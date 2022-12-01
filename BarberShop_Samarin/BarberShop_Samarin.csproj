@@ -62,12 +62,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddClientPage.xaml.cs">
+      <DependentUpon>AddClientPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppData\AppFrame.cs" />
+    <Compile Include="AppData\ClientBuilder.cs" />
+    <Compile Include="AppData\ClientHelper.cs" />
     <Compile Include="BronPage.xaml.cs">
       <DependentUpon>BronPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClinentsPage.xaml.cs">
       <DependentUpon>ClinentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\GlavPage.xaml.cs">
       <DependentUpon>GlavPage.xaml</DependentUpon>
@@ -75,6 +95,10 @@
     <Compile Include="WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddClientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AuthPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,7 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Admins.cs">
-      <DependentUpon>ADO.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ADO.Context.cs">
       <AutoGen>True</AutoGen>
@@ -132,16 +156,16 @@
       <DependentUpon>ADO.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Clients.cs">
-      <DependentUpon>ADO.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Masters.cs">
-      <DependentUpon>ADO.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Records.cs">
-      <DependentUpon>ADO.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Service.cs">
-      <DependentUpon>ADO.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagrams.cs">
       <DependentUpon>ADO.tt</DependentUpon>
@@ -169,6 +193,13 @@
     </EntityDeploy>
     <None Include="Model\ADO.edmx.diagram">
       <DependentUpon>ADO.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -198,6 +229,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ADO.edmx</DependentUpon>
       <LastGenOutput>ADO.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

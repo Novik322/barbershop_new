@@ -16,18 +16,17 @@ using System.Windows.Shapes;
 namespace BarberShop_Samarin
 {
     /// <summary>
-    /// Логика взаимодействия для WelcomePage.xaml
+    /// Логика взаимодействия для AddClientPage.xaml
     /// </summary>
-    public partial class WelcomePage : Page
+    public partial class AddClientPage : Page
     {
-        public WelcomePage()
+        public AddClientPage()
         {
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void AddClientBtn_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

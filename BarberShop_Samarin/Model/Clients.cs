@@ -23,6 +23,8 @@ namespace BarberShop_Samarin.Model
         public string Name { get; set; }
         public string Phone { get; set; }
         public int Master { get; set; }
+        public string Comment { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
         public virtual Masters Masters { get; set; }
         public virtual ICollection<Records> Records { get; set; }

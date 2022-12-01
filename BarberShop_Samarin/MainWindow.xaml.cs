@@ -26,7 +26,8 @@ namespace BarberShop_Samarin
         public MainWindow()
         {
             InitializeComponent();
-            AppConnect.project_model = new SamarinR_BarbershopEntities();
+            AppConnect.project_model = new user20Entities();
+           // AppConnect.project_model = new SamarinR_BarbershopEntities();
             AppFrame.Main = MainFrame;
             MainFrame.Navigate(new AuthPage());
             OnepageBtn.Visibility = Visibility.Hidden;

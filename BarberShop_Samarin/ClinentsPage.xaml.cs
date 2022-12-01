@@ -38,6 +38,37 @@ namespace BarberShop_Samarin
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            AppData.ClientBuilder clients = new AppData.ClientBuilder();
+            ClientsDg.ItemsSource = clients.GetMaterials();
+        }
+
+        private void SearchTb_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchTb_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void AddClientBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelClientBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditClientBtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
