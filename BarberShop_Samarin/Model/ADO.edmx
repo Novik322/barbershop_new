@@ -23,6 +23,8 @@
           <Property Name="Name" Type="varchar" MaxLength="32" Nullable="false" />
           <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Master" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="64" />
+          <Property Name="Date" Type="varchar" MaxLength="64" />
         </EntityType>
         <EntityType Name="Masters">
           <Key>
@@ -156,6 +158,8 @@
           <Property Name="Master" Nullable="false" Type="Int32" />
           <NavigationProperty Name="Masters" Relationship="Self.FK_Clients_Masters" FromRole="Clients" ToRole="Masters" />
           <NavigationProperty Name="Records" Relationship="Self.FK_Records_Clients" FromRole="Clients" ToRole="Records" />
+          <Property Name="Comment" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Masters">
           <Key>
@@ -291,6 +295,8 @@
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="SamarinR_BarbershopModel.Clients">
               <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
