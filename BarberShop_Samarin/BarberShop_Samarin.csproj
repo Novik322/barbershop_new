@@ -62,83 +62,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddClientPage.xaml.cs">
-      <DependentUpon>AddClientPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AppData\AppFrame.cs" />
     <Compile Include="AppData\ClientBuilder.cs" />
     <Compile Include="AppData\ClientHelper.cs" />
+    <Compile Include="AppData\RecordsBuilder.cs" />
     <Compile Include="BronPage.xaml.cs">
       <DependentUpon>BronPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClinentsPage.xaml.cs">
       <DependentUpon>ClinentsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pages\GlavPage.xaml.cs">
-      <DependentUpon>GlavPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WelcomePage.xaml.cs">
-      <DependentUpon>WelcomePage.xaml</DependentUpon>
-    </Compile>
-    <Page Include="AddClientPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AuthPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="BronPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ClinentsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AppData\AppConnect.cs" />
-    <Compile Include="AuthPage.xaml.cs">
-      <DependentUpon>AuthPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="View\Pages\GlavPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WelcomePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Model\Admins.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ADO.Context.cs">
       <AutoGen>True</AutoGen>
@@ -156,20 +91,100 @@
       <DependentUpon>ADO.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Clients.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Masters.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Records.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Service.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagrams.cs">
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\BuxgalterPage.xaml.cs">
+      <DependentUpon>BuxgalterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\GlavPage.xaml.cs">
+      <DependentUpon>GlavPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\AddClientWin.xaml.cs">
+      <DependentUpon>AddClientWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\EditClientWin.xaml.cs">
+      <DependentUpon>EditClientWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BronPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClinentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\BuxgalterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\AddClientWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\EditClientWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppData\AppConnect.cs" />
+    <Compile Include="AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Pages\GlavPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -187,6 +202,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Model\ADO.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ADO.Designer.cs</LastGenOutput>
@@ -194,10 +213,6 @@
     <None Include="Model\ADO.edmx.diagram">
       <DependentUpon>ADO.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="Model\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -211,9 +226,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Fonts\" />
+    <Folder Include="Fonts\" />
     <Folder Include="Resources\Icons\" />
-    <Folder Include="View\Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\font_barber.jpg" />
@@ -222,8 +236,8 @@
   <ItemGroup>
     <Content Include="Model\ADO.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ADO.Context.cs</LastGenOutput>
       <DependentUpon>ADO.edmx</DependentUpon>
+      <LastGenOutput>ADO.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\ADO.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

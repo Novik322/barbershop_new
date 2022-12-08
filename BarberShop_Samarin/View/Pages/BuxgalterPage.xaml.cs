@@ -13,20 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BarberShop_Samarin
+namespace BarberShop_Samarin.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddClientPage.xaml
+    /// Логика взаимодействия для BuxgalterPage.xaml
     /// </summary>
-    public partial class AddClientPage : Page
+    public partial class BuxgalterPage : Page
     {
-        public AddClientPage()
+        public BuxgalterPage()
         {
             InitializeComponent();
-        }
-
-        private void AddClientBtn_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

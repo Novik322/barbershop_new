@@ -17,7 +17,7 @@ namespace BarberShop_Samarin.Model
         public int ID { get; set; }
         public System.DateTime Date_Time { get; set; }
         public int Client { get; set; }
-        public Nullable<int> Master { get; set; }
+        public int Master { get; set; }
         public Nullable<int> Service { get; set; }
         public string Comment { get; set; }
     

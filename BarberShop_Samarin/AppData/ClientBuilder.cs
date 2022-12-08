@@ -11,7 +11,6 @@ namespace BarberShop_Samarin.AppData
         List<Model.Clients> clients = AppConnect.project_model.Clients.ToList();
         public ClientBuilder()
         {
-
         }
         public List<Model.Clients> GetMaterials()
         {

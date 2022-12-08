@@ -8,13 +8,43 @@
       d:DesignHeight="665" d:DesignWidth="1000"
       Title="Главная" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="10*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="5">
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <ComboBox Grid.Column="2" x:Name="SortCmb" Margin="5" FontSize="18">
+                <ComboBoxItem Content="По умолчанию" x:Name="Deffault"/>
+                <ComboBoxItem Content="По количеству ↗" x:Name="KolUp"/>
+                <ComboBoxItem Content="По размеру ↗" x:Name="SizeUp"/>
+                <ComboBoxItem Content="По количеству ↙" x:Name="KolDown"/>
+                <ComboBoxItem Content="По размеру ↙" x:Name="SizeDown"/>
+            </ComboBox>
+
+            <ComboBox Grid.Column="1" x:Name="FiltrCmb" FontSize="18" Margin="5" DisplayMemberPath="Name"/>
+
+            <!--#region Текст и поле для ввода -->
+            <TextBox
+            Grid.Column="0"
+                Margin="5"
+                Name="SearchTb"
+                 CaretIndex="0"
+                FontSize="18"
+                 TextChanged="SearchTb_TextChanged"
+                 Text="Введите текст для поиска"/>
+            <!--#endregion-->
+        </Grid>
+
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
             <Button Margin="0 0 10 0" Content="Добавить бронь" Style="{StaticResource AcceptButton}"/>
             <Button Margin="0 0 10 0" Content="Удалить бронь" Style="{StaticResource AcceptButton}"/>
             <Button Margin="0 0 10 0" Content="Изменить бронь" Style="{StaticResource AcceptButton}"/>
@@ -22,44 +52,13 @@
         <DataGrid Name="ClientsDg"
                   FontSize="20"
                   AutoGenerateColumns="False"
-                  Grid.Row="1" Grid.Column="1">
+                  Grid.Row="2" Grid.Column="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Время" Binding="{Binding Clients.Name}"/>
+                <DataGridTextColumn Header="Время" Binding="{Binding Date_Time}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Clients.Name}"/>
-
-                <DataGridTemplateColumn Header="Телефон">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding Clients.Phone}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTextColumn Header="Мастер" Binding="{Binding Clients.Master}"/>
+                <DataGridTextColumn Header="Услуга" Binding="{Binding Service1.Name_Service}"/>
+                <DataGridTextColumn Header="Мастер" Binding="{Binding Masters.Master_Name}"/>
             </DataGrid.Columns>
-
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <TextBlock Grid.Column="1" Text="{Binding NameAnimal, StringFormat=Имя: {0}}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Birth, StringFormat=Дата рождения: {0}}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Weight, StringFormat=Вес: {0}}"/>
-                        <TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="3" Text="{Binding Description, StringFormat=Описание: {0}}" TextWrapping="Wrap" />
-                        <Image Grid.RowSpan="2" Grid.Column="0" Source="{Binding Image}" Width="150"/>
-                    </Grid>
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
         </DataGrid>
     </Grid>
 </Page>

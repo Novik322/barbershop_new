@@ -52,7 +52,7 @@
             <TextBox Grid.Row="1" Grid.Column="1" Name="NameCliTb" Background="gray"/>
             <TextBox Grid.Row="2" Grid.Column="1" Name="TelTb"/>
             <DatePicker Name="VremyaDt"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
-            <ComboBox Name="MasterCmb"  Grid.Row="4" Grid.Column="1" SelectionChanged="ComboBox_SelectionChanged" Text="{Binding Masters.Master_Name}"/>
+            <ComboBox Name="MasterCmb"  Grid.Row="4" Grid.Column="1" SelectionChanged="ComboBox_SelectionChanged" Text="{Binding Master_Name}"/>
             <Button Grid.Row="6" Grid.Column="1" Content="Добавить" Style="{StaticResource AcceptButton}" x:Name="AddBronBtn" Click="AddBronBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Right"/>
         </Grid>
 

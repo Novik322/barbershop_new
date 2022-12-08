@@ -44,6 +44,7 @@ namespace BarberShop_Samarin
                     (Application.Current.MainWindow as MainWindow).OnepageBtn.Visibility = Visibility.Visible;
                     (Application.Current.MainWindow as MainWindow).RegistationBtn.Visibility = Visibility.Hidden;
                     (Application.Current.MainWindow as MainWindow).ExtRegBtn.Visibility = Visibility.Visible;
+                    (Application.Current.MainWindow as MainWindow).BuxBtn.Visibility = Visibility.Visible;
                     switch (user.Dostup)
                     {
                         case 1:

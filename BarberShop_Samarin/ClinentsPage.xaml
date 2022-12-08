@@ -9,11 +9,6 @@
       Title="Клиенты" Loaded="Page_Loaded">
 
     <Grid Margin="5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="5*" />
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
@@ -51,12 +46,13 @@
 
         </Grid>
 
-        <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="5">
+        <StackPanel HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal" Margin="5">
             <Button Margin="0 0 10 0" Content="Добавить клиента" Style="{StaticResource AcceptButton}" Name="AddClientBtn" Click="AddClientBtn_Click"/>
             <Button Margin="0 0 10 0" Content="Удалить клиента" Style="{StaticResource AcceptButton}" Name="DelClientBtn" Click="DelClientBtn_Click"/>
             <Button Margin="0 0 10 0" Content="Изменить клиента" Style="{StaticResource AcceptButton}" Name="EditClientBtn" Click="EditClientBtn_Click"/>
         </StackPanel>
         <DataGrid Name="ClientsDg"
+                  SelectionChanged="ClientsDg_SelectionChanged"
                   FontSize="20"
                   AutoGenerateColumns="False"
                   Grid.Row="2" Grid.Column="1"

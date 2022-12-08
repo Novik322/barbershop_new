@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище SamarinR_BarbershopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище SamarinR_BarbershopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="ID" />
@@ -24,7 +24,6 @@
           <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Master" Type="int" Nullable="false" />
           <Property Name="Comment" Type="varchar" MaxLength="64" />
-          <Property Name="Date" Type="varchar" MaxLength="64" />
         </EntityType>
         <EntityType Name="Masters">
           <Key>
@@ -40,7 +39,7 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Date_Time" Type="datetime" Nullable="false" />
           <Property Name="Client" Type="int" Nullable="false" />
-          <Property Name="Master" Type="int" />
+          <Property Name="Master" Type="int" Nullable="false" />
           <Property Name="Service" Type="int" />
           <Property Name="Comment" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -62,7 +61,7 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK_Clients_Masters">
+        <Association Name="FK_Clients_Masters1">
           <End Role="Masters" Type="Self.Masters" Multiplicity="1" />
           <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
           <ReferentialConstraint>
@@ -86,8 +85,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Records_Masters">
-          <End Role="Masters" Type="Self.Masters" Multiplicity="0..1" />
+        <Association Name="FK_Records_Masters1">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="1" />
           <End Role="Records" Type="Self.Records" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Masters">
@@ -117,7 +116,7 @@
           <EntitySet Name="Records" EntityType="Self.Records" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Clients_Masters" Association="Self.FK_Clients_Masters">
+          <AssociationSet Name="FK_Clients_Masters1" Association="Self.FK_Clients_Masters1">
             <End Role="Masters" EntitySet="Masters" />
             <End Role="Clients" EntitySet="Clients" />
           </AssociationSet>
@@ -125,7 +124,7 @@
             <End Role="Clients" EntitySet="Clients" />
             <End Role="Records" EntitySet="Records" />
           </AssociationSet>
-          <AssociationSet Name="FK_Records_Masters" Association="Self.FK_Records_Masters">
+          <AssociationSet Name="FK_Records_Masters1" Association="Self.FK_Records_Masters1">
             <End Role="Masters" EntitySet="Masters" />
             <End Role="Records" EntitySet="Records" />
           </AssociationSet>
@@ -134,7 +133,8 @@
             <End Role="Records" EntitySet="Records" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SamarinR_BarbershopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -142,70 +142,69 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Nullable="false" Type="Int32" />
-          <Property Name="Login" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="Password" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="Dostup" Nullable="false" Type="Int32" />
-          <Property Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dostup" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Clients">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Nullable="false" Type="Int32" />
-          <Property Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="Master" Nullable="false" Type="Int32" />
-          <NavigationProperty Name="Masters" Relationship="Self.FK_Clients_Masters" FromRole="Clients" ToRole="Masters" />
-          <NavigationProperty Name="Records" Relationship="Self.FK_Records_Clients" FromRole="Clients" ToRole="Records" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Master" Type="Int32" Nullable="false" />
           <Property Name="Comment" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Masters" Relationship="Self.FK_Clients_Masters1" FromRole="Clients" ToRole="Masters" />
+          <NavigationProperty Name="Records" Relationship="Self.FK_Records_Clients" FromRole="Clients" ToRole="Records" />
         </EntityType>
         <EntityType Name="Masters">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Nullable="false" Type="Int32" />
-          <Property Name="Master_Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" Type="String" />
-          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Masters" FromRole="Masters" ToRole="Clients" />
-          <NavigationProperty Name="Records" Relationship="Self.FK_Records_Masters" FromRole="Masters" ToRole="Records" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Master_Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Masters1" FromRole="Masters" ToRole="Clients" />
+          <NavigationProperty Name="Records" Relationship="Self.FK_Records_Masters1" FromRole="Masters" ToRole="Records" />
         </EntityType>
         <EntityType Name="Records">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Nullable="false" Type="Int32" />
-          <Property Name="Date_Time" Nullable="false" Precision="3" Type="DateTime" />
-          <Property Name="Client" Nullable="false" Type="Int32" />
-          <Property Name="Master" Type="Int32" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Client" Type="Int32" Nullable="false" />
+          <Property Name="Master" Type="Int32" Nullable="false" />
           <Property Name="Service" Type="Int32" />
-          <Property Name="Comment" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Clients" Relationship="Self.FK_Records_Clients" FromRole="Records" ToRole="Clients" />
-          <NavigationProperty Name="Masters" Relationship="Self.FK_Records_Masters" FromRole="Records" ToRole="Masters" />
+          <NavigationProperty Name="Masters" Relationship="Self.FK_Records_Masters1" FromRole="Records" ToRole="Masters" />
           <NavigationProperty Name="Service1" Relationship="Self.FK_Records_Service" FromRole="Records" ToRole="Service" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Nullable="false" Type="Int32" />
-          <Property Name="Name_Service" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="Price_Service" Nullable="false" Precision="18" Scale="2" Type="Decimal" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name_Service" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_Service" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="Records" Relationship="Self.FK_Records_Service" FromRole="Service" ToRole="Records" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="principal_id" Nullable="false" Type="Int32" />
-          <Property Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
-          <Property Name="definition" MaxLength="Max" FixedLength="false" Type="Binary" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Clients_Masters">
-          <End Type="Self.Masters" Multiplicity="1" Role="Masters" />
-          <End Type="Self.Clients" Multiplicity="*" Role="Clients" />
+        <Association Name="FK_Clients_Masters1">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Masters">
               <PropertyRef Name="ID" />
@@ -216,8 +215,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Records_Clients">
-          <End Type="Self.Clients" Multiplicity="1" Role="Clients" />
-          <End Type="Self.Records" Multiplicity="*" Role="Records" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Records" Type="Self.Records" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clients">
               <PropertyRef Name="ID" />
@@ -227,9 +226,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Records_Masters">
-          <End Type="Self.Masters" Multiplicity="0..1" Role="Masters" />
-          <End Type="Self.Records" Multiplicity="*" Role="Records" />
+        <Association Name="FK_Records_Masters1">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="1" />
+          <End Role="Records" Type="Self.Records" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Masters">
               <PropertyRef Name="ID" />
@@ -240,8 +239,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Records_Service">
-          <End Type="Self.Service" Multiplicity="0..1" Role="Service" />
-          <End Type="Self.Records" Multiplicity="*" Role="Records" />
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Records" Type="Self.Records" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Service">
               <PropertyRef Name="ID" />
@@ -258,21 +257,21 @@
           <EntitySet Name="Records" EntityType="Self.Records" />
           <EntitySet Name="Service" EntityType="Self.Service" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK_Clients_Masters" Association="Self.FK_Clients_Masters">
-            <End EntitySet="Masters" Role="Masters" />
-            <End EntitySet="Clients" Role="Clients" />
+          <AssociationSet Name="FK_Clients_Masters1" Association="Self.FK_Clients_Masters1">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="Clients" EntitySet="Clients" />
           </AssociationSet>
           <AssociationSet Name="FK_Records_Clients" Association="Self.FK_Records_Clients">
-            <End EntitySet="Clients" Role="Clients" />
-            <End EntitySet="Records" Role="Records" />
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Records" EntitySet="Records" />
           </AssociationSet>
-          <AssociationSet Name="FK_Records_Masters" Association="Self.FK_Records_Masters">
-            <End EntitySet="Masters" Role="Masters" />
-            <End EntitySet="Records" Role="Records" />
+          <AssociationSet Name="FK_Records_Masters1" Association="Self.FK_Records_Masters1">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="Records" EntitySet="Records" />
           </AssociationSet>
           <AssociationSet Name="FK_Records_Service" Association="Self.FK_Records_Service">
-            <End EntitySet="Service" Role="Service" />
-            <End EntitySet="Records" Role="Records" />
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Records" EntitySet="Records" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -295,12 +294,11 @@
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="SamarinR_BarbershopModel.Clients">
               <MappingFragment StoreEntitySet="Clients">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Master" ColumnName="Master" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

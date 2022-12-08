@@ -1,5 +1,6 @@
 ﻿using BarberShop_Samarin.AppData;
 using BarberShop_Samarin.Model;
+using BarberShop_Samarin.View.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace BarberShop_Samarin
             BronBtn.Visibility = Visibility.Hidden;
             ClientsBtn.Visibility = Visibility.Hidden;
             ExtRegBtn.Visibility = Visibility.Hidden;
+            BuxBtn.Visibility = Visibility.Hidden;
 
 
 
@@ -111,6 +113,12 @@ namespace BarberShop_Samarin
             ClientsBtn.Visibility = Visibility.Hidden;
             ExtRegBtn.Visibility = Visibility.Hidden;
             RegistationBtn.Visibility = Visibility.Visible;
+            BuxBtn.Visibility = Visibility.Hidden;
+        }
+
+        private void BuxBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new BuxgalterPage());
         }
     }
 }

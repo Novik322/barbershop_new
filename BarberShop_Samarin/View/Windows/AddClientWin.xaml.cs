@@ -10,30 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BarberShop_Samarin
+namespace BarberShop_Samarin.View.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для WelcomePage.xaml
+    /// Логика взаимодействия для AddClientWin.xaml
     /// </summary>
-    public partial class WelcomePage : Page
+    public partial class AddClientWin : Window
     {
-        public WelcomePage()
+        public AddClientWin()
         {
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void AddClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            AppData.RecordsBuilder records = new AppData.RecordsBuilder();
-            ClientsDg.ItemsSource = records.GetRecords();
+            
         }
 
-        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
