@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d7038de47cc143139f47b99e287d8d91" Name="Diagram1" ZoomLevel="86">
+      <Diagram DiagramId="277a94cf133b43f3b1890117e9eb2471" Name="Diagram1">
         <EntityTypeShape EntityType="SamarinR_BarbershopModel.Admins" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SamarinR_BarbershopModel.Clients" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SamarinR_BarbershopModel.Masters" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />

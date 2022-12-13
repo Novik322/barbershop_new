@@ -59,7 +59,7 @@ namespace BarberShop_Samarin
 
         private void AddClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddClientWin addClientWin = new AddClientWin();
+            AddClientWin addClientWin = new AddClientWin(client);
             addClientWin.Show();
         }
 

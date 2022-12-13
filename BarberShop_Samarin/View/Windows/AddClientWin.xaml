@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop_Samarin.View.Windows"
         mc:Ignorable="d"
-        Title="AddClientWin" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="AddClientWin"
+        Name="AddClientWindow"
+        Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -28,7 +30,7 @@
         <TextBlock Text="Комментарий: " Grid.Row="3" FontSize="24" Name="CommentTbl"/>
 
         <TextBox Grid.Row="3" Grid.Column="1"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Name="NumCardTb"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="NumCardTb" IsEnabled="false" Background="lightgray"/>
         <TextBox Grid.Row="1" Grid.Column="1" Name="NameCliTb"/>
         <TextBox Grid.Row="2" Grid.Column="1" Name="TelTb"/>
         <Button Grid.Row="6" Grid.Column="0" Content="Назад" Style="{StaticResource AcceptButton}" x:Name="CancelBtn" Click="CancelBtn_Click"  VerticalAlignment="Center" HorizontalAlignment="Center"/>

@@ -22,7 +22,7 @@ namespace BarberShop_Samarin.Model
         public int ID { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
-        public int Master { get; set; }
+        public Nullable<int> Master { get; set; }
         public string Comment { get; set; }
     
         public virtual Masters Masters { get; set; }

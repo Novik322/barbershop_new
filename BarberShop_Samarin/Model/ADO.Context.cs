@@ -13,10 +13,10 @@ namespace BarberShop_Samarin.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SamarinR_BarbershopEntities : DbContext
+    public partial class SamarinR_BarbershopEntities1 : DbContext
     {
-        public SamarinR_BarbershopEntities()
-            : base("name=SamarinR_BarbershopEntities")
+        public SamarinR_BarbershopEntities1()
+            : base("name=SamarinR_BarbershopEntities1")
         {
         }
     

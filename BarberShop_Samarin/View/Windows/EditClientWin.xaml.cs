@@ -42,6 +42,7 @@ namespace BarberShop_Samarin.View.Windows
 
         private void Changed()
         {
+            
             if (string.IsNullOrEmpty(NumCardTb.Text) && (string.IsNullOrEmpty(NameCliTb.Text)) && (string.IsNullOrEmpty(TelTb.Text)))
             {
                 MessageBox.Show("Не все поля заполнены!");
